@@ -2,11 +2,13 @@ import os
 import sys
 import pygame as pg
 x = 0
+x2 = 300
+y = 200
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 def main():
-    global x
+    global x,x2,y
     pg.display.set_caption("はばたけ！こうかとん")
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
@@ -16,8 +18,9 @@ def main():
     kk_img = pg.image.load("fig/3.png")
     kk_img = pg.transform.flip(kk_img,True,False)
 
+   
     kk_rct = kk_img.get_rect()
-    kk_rct.center = 300,200
+    kk_rct.center = x2,y
 
     while True:
         for event in pg.event.get():
@@ -37,7 +40,6 @@ def main():
             kk_rct.move_ip((-1,0))
         if key_lst[pg.K_RIGHT]:
             kk_rct.move_ip((+1,0))
-        
         pg.display.update()
         
         x -= 1
