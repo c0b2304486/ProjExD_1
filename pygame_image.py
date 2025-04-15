@@ -29,7 +29,7 @@ def main():
         screen.blit(bg_img, [x, 0])
         screen.blit(bg_img2,[1600+x,0])
         screen.blit(bg_img, [3200+x, 0])
-        screen.blit(300,200)
+        screen.blit(kk_img,kk_rct)
 
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
